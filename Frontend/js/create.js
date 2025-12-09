@@ -71,7 +71,11 @@ function setupCreate() {
             const dt = e.dataTransfer;
             if (dt && dt.files) handleFiles(dt.files);
         });
-        dropzone.addEventListener('click', () => fileInput && fileInput.click());
+        dropzone.addEventListener('click', (e) => {
+            // Avoid double dialogs when clicking the actual input
+            if (e.target === fileInput) return;
+            if (fileInput) fileInput.click();
+        });
     }
 
     if (fileInput) {
@@ -104,8 +108,25 @@ function setupCreate() {
                 body: formData,
                 credentials: 'include'
             });
-            if (!res.ok) throw new Error('Upload failed');
-            const data = await res.json();
+
+            let data = {};
+            let rawText = '';
+            try {
+                rawText = await res.clone().text();
+            } catch (_) {
+                rawText = '';
+            }
+            try {
+                data = rawText ? JSON.parse(rawText) : {};
+            } catch (_) {
+                data = {};
+            }
+
+            if (!res.ok) {
+                const msg = data.error || rawText || `Upload failed (${res.status})`;
+                throw new Error(msg);
+            }
+
             statusEl.textContent = `Published ${data.type || currentType}!`;
             previewStatus.textContent = 'Published';
             clearFile();
@@ -113,9 +134,10 @@ function setupCreate() {
             locationInput.value = '';
             allowComments.checked = true;
         } catch (err) {
-            console.error(err);
-            statusEl.textContent = 'Failed to publish. Try again.';
-            alert('Failed to publish.');
+            console.error('Publish error:', err);
+            const message = err?.message || 'Failed to publish.';
+            statusEl.textContent = message;
+            alert(message);
         } finally {
             submitBtn.disabled = false;
             submitBtn.textContent = 'Publish';
