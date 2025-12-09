@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Instagram</title>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="logo-section">
+                <img src="../../assets/icons/instagram-logo.svg" alt="Instagram" class="auth-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-text" style="display: none;">Instagram</div>
+            </div>
+            
+            <h2 class="auth-title">Sign up to see photos and videos from your friends.</h2>
+            
+            <form id="signupForm" class="auth-form" onsubmit="return false;">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Username" 
+                        required
+                        autocomplete="username"
+                        maxlength="30"
+                    >
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Email" 
+                        required
+                        autocomplete="email"
+                        maxlength="100"
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        name="fullName" 
+                        placeholder="Full Name (optional)" 
+                        autocomplete="name"
+                        maxlength="100"
+                    >
+                    <span class="error-message" id="fullNameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        required
+                        autocomplete="new-password"
+                        minlength="8"
+                    >
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        placeholder="Confirm Password" 
+                        required
+                        autocomplete="new-password"
+                    >
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <textarea 
+                        id="bio" 
+                        name="bio" 
+                        placeholder="Bio (optional)" 
+                        rows="3"
+                        maxlength="500"
+                    ></textarea>
+                    <span class="error-message" id="bioError"></span>
+                </div>
+                
+                <button type="submit" class="auth-button" id="submitBtn">Sign Up</button>
+                
+                <div class="form-message" id="formMessage"></div>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Have an account? <a href="login.html">Log in</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/auth.js"></script>
+</body>
+</html>
+

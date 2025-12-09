@@ -1,0 +1,21 @@
+Test Users for Instagram Clone
+==================================================
+
+Username: johndoe
+Email: john@example.com
+Password: Test1234!
+User ID: 1
+--------------------------------------------------
+
+Username: janedoe
+Email: jane@example.com
+Password: Test1234!
+User ID: 2
+--------------------------------------------------
+
+Username: traveler123
+Email: traveler@example.com
+Password: Test1234!
+User ID: 3
+--------------------------------------------------
+

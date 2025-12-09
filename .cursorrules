@@ -1,0 +1,85 @@
+# Instagram Clone - Code Organization Rules
+
+## CRITICAL: File Organization Rules
+
+### Frontend Files
+- **HTML files** MUST be placed in `Frontend/html/` folder
+  - Examples: index.html, login.html, profile.html, etc.
+  - NEVER place HTML files in root, css/, js/, or any other folder
+
+- **CSS files** MUST be placed in `Frontend/css/` folder
+  - Examples: style.css, main.css, components.css, etc.
+  - NEVER place CSS files in root, html/, js/, or any other folder
+
+- **JavaScript files** MUST be placed in `Frontend/js/` folder
+  - Examples: app.js, auth.js, api.js, etc.
+  - NEVER place JavaScript files in root, html/, css/, or any other folder
+
+### Assets Files
+- **Images** (photos, pictures, graphics) MUST be placed in `assets/images/` folder
+  - User profile pictures, post images, story images, etc.
+  - NEVER place images in root, icons/, or any other folder
+
+- **Icons** MUST be placed in `assets/icons/` folder
+  - Application icons, UI icons, favicons, etc.
+  - NEVER place icons in root, images/, or any other folder
+
+### Backend Files
+- **Python backend files** should be in the project root
+  - Examples: app.py, config.py, database.py, init_database.py
+  - Keep backend files organized by purpose (one purpose per file)
+
+- **SQL files** should be in the project root
+  - Examples: schema.sql, migrations, etc.
+
+### General Code Organization Principles
+
+1. **Neat and Clean Code**
+   - Write clean, readable, and well-commented code
+   - Follow consistent naming conventions
+   - Use proper indentation and formatting
+
+2. **One Purpose Per File**
+   - Each file should have a single, clear purpose
+   - Avoid mixing concerns in a single file
+   - Split large files into smaller, focused modules
+
+3. **Files Must Be in Designated Folders**
+   - ALWAYS place files in their correct designated folders
+   - NEVER mix file types in wrong directories
+   - If unsure where a file belongs, ask or check this rules file
+
+4. **Strict Folder Adherence**
+   - When creating new files, ALWAYS verify the correct folder location
+   - When editing files, ensure they remain in their correct folders
+   - When suggesting file creation, ALWAYS specify the correct folder path
+
+## Examples of CORRECT File Placement
+
+✅ `Frontend/html/index.html` - HTML file in html folder
+✅ `Frontend/css/style.css` - CSS file in css folder
+✅ `Frontend/js/app.js` - JavaScript file in js folder
+✅ `assets/images/profile.jpg` - Image in images folder
+✅ `assets/icons/logo.png` - Icon in icons folder
+✅ `app.py` - Python backend file in root
+✅ `schema.sql` - SQL file in root
+
+## Examples of INCORRECT File Placement
+
+❌ `index.html` in root - Should be in `Frontend/html/`
+❌ `style.css` in `Frontend/html/` - Should be in `Frontend/css/`
+❌ `app.js` in root - Should be in `Frontend/js/`
+❌ `photo.jpg` in root - Should be in `assets/images/`
+❌ `icon.png` in `assets/images/` - Should be in `assets/icons/`
+
+## When Creating or Suggesting Files
+
+- ALWAYS specify the full correct path including the folder
+- ALWAYS verify the file type matches the folder purpose
+- ALWAYS follow the folder structure rules above
+- If creating multiple files, ensure each goes to its correct folder
+
+## Reminder
+
+These rules are MANDATORY. All code must follow this organization structure. Keep the project neat, clean, and well-organized.
+

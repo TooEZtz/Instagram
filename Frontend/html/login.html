@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Instagram</title>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="logo-section">
+                <img src="../../assets/icons/instagram-logo.svg" alt="Instagram" class="auth-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-text" style="display: none;">Instagram</div>
+            </div>
+            
+            <form id="loginForm" class="auth-form" onsubmit="return false;">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Username or Email" 
+                        required
+                        autocomplete="username"
+                    >
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        required
+                        autocomplete="current-password"
+                    >
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                
+                <button type="submit" class="auth-button" id="submitBtn">Log In</button>
+                
+                <div class="form-message" id="formMessage"></div>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/auth.js"></script>
+</body>
+</html>
+
